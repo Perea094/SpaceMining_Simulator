@@ -29,7 +29,24 @@ This space mining simulator serves as a vital tool, bridging the present with th
 
 ---
 ## Class Diagram  
-Here will be the class diagram.
+![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/113b03fd-dc69-43ca-83d9-fc7793f13805)
+
+This is the UML diagram I designed for the project. It includes the following key elements:  
+
+- **`Mission` Class**:  
+  - Has a **composition** relationship with the `SpaceShip` class.  
+  - Has an **aggregation** relationship with the `SpaceBody` class.  
+
+- **`SpaceBody` Class (Abstract)**:  
+  - Serves as the superclass for `Asteroid`, `Planet`, and `Moon` (inheritance).  
+  - Has an **aggregation** relationship with the `Resource` class.  
+
+### Relationships Summary:  
+- **Composition**: `Mission` **uses** a `SpaceShip` .  
+- **Aggregation**:  
+  - `Mission` **targets** a `SpaceBody` .  
+  - `SpaceBody` **contains** `Resource` .  
+- **Inheritance**: `Asteroid`, `Planet`, and `Moon` are specialized subclasses of `SpaceBody`.  
 
 ---
 ## Future enhancements
