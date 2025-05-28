@@ -29,7 +29,8 @@ This space mining simulator serves as a vital tool, bridging the present with th
 
 ---
 ## Class Diagram  
-Here will be the class diagram.
+![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/113b03fd-dc69-43ca-83d9-fc7793f13805)
+
 
 ---
 ## Future enhancements
