@@ -1,5 +1,5 @@
-#ifndef SPACESHIP_H
-#define SPACESHIP_H
+#ifndef SPACEBODY_H
+#define SPACEBODY_H
 
 #include <string>
 #include "include/Resource.h"
@@ -34,7 +34,12 @@ public:
     void setRadius(float radius);
     void setMass(float mass);
     void setResources(const std::vector<Resource>& resources);
+
+    // Methods
+    virtual std::vector<std::string> extractResources() const; // Extracts resources from the space body
+    virtual std::string getInfo() const; // Returns a string with information about the space body
+
 };
 
 
-#endif // SPACESHIP_H
+#endif // SPACEBODY_H
