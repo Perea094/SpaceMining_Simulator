@@ -29,6 +29,8 @@ public:
     void setGravity(float g);
 
     // Methods
+    std::vector<std::string> extractResources() const override; // Extracts resources from the planet
+    std::string getInfo() const override; // Returns a string with information about the planet
 };
 
 

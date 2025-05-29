@@ -23,6 +23,8 @@ class Asteroid : public SpaceBody
         void setComposition(const std::string& comp);
 
         // Methods
+        std::vector<std::string> extractResources() const override; // Extracts resources from the asteroid
+        std::string getInfo() const override; // Returns a string with information about the asteroid
 
 };
 
