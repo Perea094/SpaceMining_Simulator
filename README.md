@@ -29,7 +29,8 @@ This space mining simulator serves as a vital tool, bridging the present with th
 
 ---
 ## Class Diagram  
-![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/113b03fd-dc69-43ca-83d9-fc7793f13805)
+![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/ceb914f8-07b8-4a38-9de0-040fcfbd0135)
+
 
 This is the UML diagram I designed for the project. It includes the following key elements:  
 
