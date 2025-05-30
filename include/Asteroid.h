@@ -13,8 +13,7 @@ class Asteroid : public SpaceBody
         // Constructors
         Asteroid();
         Asteroid(const std::string& name, float distanceFromEarth, float radius, float mass, 
-                 const std::string& composition, const std::vector<Resource>& resources = {})
-            : SpaceBody(name, distanceFromEarth, radius, mass, resources), composition(composition) {}
+                 const std::string& composition, const std::vector<Resource>& resources = {});
 
         // Getters
         std::string getComposition() const;

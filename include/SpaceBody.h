@@ -18,8 +18,7 @@ public:
     // Constructors
     SpaceBody(/* args */);
     SpaceBody(const std::string& name, float distanceFromEarth, float radius, float mass, 
-              const std::vector<Resource>& resources = {})
-        : name(name), distanceFromEarth(distanceFromEarth), radius(radius), mass(mass) , resources(resources){}
+              const std::vector<Resource>& resources = {});
     
     // Getters
     std::string getName() const;

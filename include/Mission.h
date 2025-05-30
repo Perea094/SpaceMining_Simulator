@@ -21,8 +21,7 @@ class Mission
     public:
         // Constructors
         Mission();
-        Mission(const SpaceBody& target, const SpaceShip& ship, float duration)
-            : Target(target), Ship(ship), Duration(duration) {}
+        Mission(const SpaceBody& target, const SpaceShip& ship, float duration);
 
         // Getters
         SpaceBody getTarget() const;

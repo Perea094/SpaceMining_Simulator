@@ -16,9 +16,7 @@ public:
     // Constructors
     Planet();
     Planet(const std::string& name, float distanceFromEarth, float radius, float mass, 
-           const std::string& planetType, float gravity, const std::vector<Resource>& resources = {})
-        : SpaceBody(name, distanceFromEarth, radius, mass, resources), 
-          planetType(planetType), gravity(gravity) {}
+           const std::string& planetType, float gravity, const std::vector<Resource>& resources = {});
 
     // Getters
     std::string getPlanetType() const;

@@ -13,8 +13,7 @@ public:
     
     // Constructors
     Resource();
-    Resource(const std::string& name, float value, float quantity)
-        : name(name), value(value), quantity(quantity) {}
+    Resource(const std::string& name, float value, float quantity);
 
     // Getters
     std::string getName() const;

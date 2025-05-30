@@ -12,8 +12,7 @@ class Moon : public SpaceBody
         // Constructors
         Moon();
         Moon(const std::string& name, float distanceFromEarth, float radius, float mass, 
-             float gravity, const std::vector<Resource>& resources = {})
-            : SpaceBody(name, distanceFromEarth, radius, mass, resources), gravity(gravity) {}
+             float gravity, const std::vector<Resource>& resources = {});
 
         // Getters
         float getGravity() const;

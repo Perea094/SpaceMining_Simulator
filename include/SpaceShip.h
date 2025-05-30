@@ -11,8 +11,7 @@ private:
 public:
     // Constructors
     SpaceShip();
-    SpaceShip(float fuel, float cargoCapacity, float efficiency)
-        : fuel(fuel), cargoCapacity(cargoCapacity), efficiency(efficiency) {}
+    SpaceShip(float fuel, float cargoCapacity, float efficiency);
     
     // Getters
     float getFuel() const;
@@ -23,7 +22,7 @@ public:
     void setFuel(float fuel);
     void setCargoCapacity(float cargoCapacity);
     void setEfficiency(float efficiency);
-    
+
     
 };
 
