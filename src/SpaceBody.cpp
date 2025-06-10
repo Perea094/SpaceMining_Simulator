@@ -1,6 +1,10 @@
 #include "../include/SpaceBody.h"
 #include <string>
 #include <vector>
+#include <algorithm>
+
+SpaceBody::SpaceBody()
+    : name(""), distanceFromEarth(0), radius(0), mass(0), resources() {}
 
 SpaceBody::SpaceBody(const std::string& name, float distanceFromEarth, float radius, float mass, 
                      const std::vector<Resource>& resources)
@@ -39,12 +43,52 @@ std::vector<std::string> SpaceBody::extractResources() const {
     return extractedResources;
 }
 
+float SpaceBody::getValue() const {
+    float totalValue = 0;
+    if (resources.empty())
+    {
+        return totalValue; // No resources, value is zero
+    }
+    else
+    {
+        for (const auto& resource : resources) {
+            totalValue += resource.getValue() * resource.getQuantity();
+        }
+    }
+    return totalValue;
+}
+
+float SpaceBody::getValue(float cargoCapacity) {
+    float totalValue = 0;
+    if (resources.empty())
+    {
+        return totalValue; // No resources, value is zero
+    }
+    else
+    {
+        for (auto& resource : resources) {
+            float totalValue = resource.getValue() * cargoCapacity;
+            resource.setQuantity(resource.getQuantity() - cargoCapacity); // Set the quantity to the cargo capacity
+        }
+    }
+    return totalValue;
+}
+
+float SpaceBody::getComplexity() const {
+    float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
+    float radiusWeight = radius / 1000; // Weight based on radius in km
+    float massWeight = mass / 1e12; // Weight based on mass in trillions of kg
+    return dFEWeight + radiusWeight + massWeight; // Total complexity score
+}
+
+
 std::string SpaceBody::getInfo() const {
     std::string info = "Space Body Information:\n";
     info += "Name: " + name + "\n";
     info += "Distance from Earth: " + std::to_string(distanceFromEarth) + " km\n";
     info += "Radius: " + std::to_string(radius) + " km\n";
     info += "Mass: " + std::to_string(mass) + " kg\n";
+    info += "Complexity: " + std::to_string(getComplexity()) + "\n";
     if (resources.empty()) {
         info += "No resources available.\n";
     } else
@@ -54,5 +98,6 @@ std::string SpaceBody::getInfo() const {
         info += resource.getInfo() + "\n";
     }
     }
+    info += "Total Value: " + std::to_string(getValue()) + "\n";
     return info;
 }
