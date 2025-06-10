@@ -45,9 +45,14 @@ std::string SpaceBody::getInfo() const {
     info += "Distance from Earth: " + std::to_string(distanceFromEarth) + " km\n";
     info += "Radius: " + std::to_string(radius) + " km\n";
     info += "Mass: " + std::to_string(mass) + " kg\n";
-    info += "Resources:\n";
+    if (resources.empty()) {
+        info += "No resources available.\n";
+    } else
+    {
+        info += "Resources:\n";
     for (const auto& resource : resources) {
         info += resource.getInfo() + "\n";
+    }
     }
     return info;
 }
