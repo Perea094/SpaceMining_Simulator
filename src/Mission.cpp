@@ -33,10 +33,11 @@ std::string Mission::simulate() const {
     summary += "Duration: " + std::to_string(Duration) + " days\n";
     
     // Simulate resource extraction
-    float profit = -Ship.getValue() - (Ship.getFuel() * 10) - (Duration * 1000 * Target->getComplexity());
-    profit += Target->getValue();
-    
-    summary += "Estimated Profit: " + std::to_string(profit) + "\n";
+    float profit = -Ship.getValue() - (Ship.getFuel() * 10) - (Duration * Target->getComplexity());
+    profit += Target->getValue(Ship.getCargoCapacity());
+    summary += "Profit from extraction: " + std::to_string(Target->getValue(Ship.getCargoCapacity())) + "\n";
+    summary += "Overal Costs: " + std::to_string(Ship.getValue() + (Ship.getFuel() * 10) + (Duration * Target->getComplexity())) + "\n";
+    summary += "NET Estimated Profit: " + std::to_string(profit) + "\n";
     
     return summary;
 }

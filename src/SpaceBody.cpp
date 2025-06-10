@@ -77,7 +77,7 @@ float SpaceBody::getValue(float cargoCapacity) {
 float SpaceBody::getComplexity() const {
     float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
     float radiusWeight = radius / 1000; // Weight based on radius in km
-    float massWeight = mass / 1e12; // Weight based on mass in trillions of kg
+    float massWeight = mass / 1e20; // Weight based on mass in trillions of kg
     return dFEWeight + radiusWeight + massWeight; // Total complexity score
 }
 
