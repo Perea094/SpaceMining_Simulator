@@ -14,7 +14,7 @@ class Mission
 {
     private:
 
-        SpaceBody Target; // The target space body for the mission
+        SpaceBody* Target; // The target space body for the mission
         SpaceShip Ship; // The spaceship used for the mission
         float Duration; // Duration of the mission in days
 
@@ -24,7 +24,7 @@ class Mission
         Mission(const SpaceBody& target, const SpaceShip& ship, float duration);
 
         // Getters
-        SpaceBody getTarget() const;
+        SpaceBody* getTarget() const;
         SpaceShip getShip() const;
         float getDuration() const;
 
