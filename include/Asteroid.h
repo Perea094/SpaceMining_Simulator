@@ -1,7 +1,7 @@
 #ifndef ASTEROID_H
 #define ASTEROID_H
 
-#include "include/SpaceBody.h"
+#include "SpaceBody.h"
 #include <string>
 
 class Asteroid : public SpaceBody
@@ -23,6 +23,7 @@ class Asteroid : public SpaceBody
 
         // Methods
         std::vector<std::string> extractResources() const override; // Extracts resources from the asteroid
+        float getComplexity() const override; // Returns the complexity of the asteroid based on its properties
         std::string getInfo() const override; // Returns a string with information about the asteroid
 
 };

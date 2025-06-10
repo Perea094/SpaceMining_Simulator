@@ -1,11 +1,11 @@
 #ifndef MISSION_H
 #define MISSION_H
 
-#include "include/SpaceShip.h"
-#include "include/SpaceBody.h"
-#include "include/Asteroid.h"
-#include "include/Planet.h"
-#include "include/Moon.h"
+#include "SpaceShip.h"
+#include "SpaceBody.h"
+#include "Asteroid.h"
+#include "Planet.h"
+#include "Moon.h"
 
 
 #include <string>
