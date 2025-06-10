@@ -1,0 +1,53 @@
+#include "../include/SpaceBody.h"
+#include <string>
+#include <vector>
+
+SpaceBody::SpaceBody(const std::string& name, float distanceFromEarth, float radius, float mass, 
+                     const std::vector<Resource>& resources)
+    : name(name), distanceFromEarth(distanceFromEarth), radius(radius), mass(mass), resources(resources) {}
+
+// Getters
+std::string SpaceBody::getName() const {return name;}
+float SpaceBody::getDistanceFromEarth() const {return distanceFromEarth;}
+float SpaceBody::getRadius() const {return radius;}
+float SpaceBody::getMass() const {return mass;}
+std::vector<Resource> SpaceBody::getResources() const {return resources;}
+
+
+// Setters
+void SpaceBody::setName(const std::string& newName) {name = newName;}
+void SpaceBody::setDistanceFromEarth(float newDistance) {distanceFromEarth = newDistance;}
+void SpaceBody::setRadius(float newRadius) {radius = newRadius;}
+void SpaceBody::setMass(float newMass) {mass = newMass;}
+void SpaceBody::setResources(const std::vector<Resource>& newResources) {resources = newResources;}
+
+// Methods
+void SpaceBody::operator+ (const Resource& resource) {
+    resources.push_back(resource);
+}
+void SpaceBody::operator- (const Resource& resource) {
+    auto it = std::remove_if(resources.begin(), resources.end(),
+                             [&resource](const Resource& res) { return res.getName() == resource.getName(); });
+    resources.erase(it, resources.end());
+}
+
+std::vector<std::string> SpaceBody::extractResources() const {
+    std::vector<std::string> extractedResources;
+    for (const auto& resource : resources) {
+        extractedResources.push_back(resource.getName());
+    }
+    return extractedResources;
+}
+
+std::string SpaceBody::getInfo() const {
+    std::string info = "Space Body Information:\n";
+    info += "Name: " + name + "\n";
+    info += "Distance from Earth: " + std::to_string(distanceFromEarth) + " km\n";
+    info += "Radius: " + std::to_string(radius) + " km\n";
+    info += "Mass: " + std::to_string(mass) + " kg\n";
+    info += "Resources:\n";
+    for (const auto& resource : resources) {
+        info += resource.getInfo() + "\n";
+    }
+    return info;
+}
