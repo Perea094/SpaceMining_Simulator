@@ -18,7 +18,7 @@ void Resource::setQuantity(float newQuantity) {quantity = newQuantity;}
 
 // Methods
 std::string Resource::getInfo() const {
-    return "Resource Name: " + name + "\n" +
-           "Value per kilo: " + std::to_string(value) + "\n" +
-           "Quantity in kilos: " + std::to_string(quantity) + "\n";
+    return "    Resource Name: " + name + "\n" +
+           "        Value per kg: " + std::to_string(value) + " USD\n" +
+           "        Quantity: " + std::to_string(quantity) + " kg\n";
 }

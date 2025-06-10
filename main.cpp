@@ -5,11 +5,11 @@
 
 int main() {
     // Create resources
-    Resource gold("Gold", 50.0f, 57000 * 10^3);
-    Resource water("Water", 1.0f, 1386 * 10^15);
+    Resource gold("Gold", 60.73 * 1000, 57000 * 1e3);
+    Resource water("Water", 1.0f, 1386 * 1e15);
     
     // Create a spaceship
-    SpaceShip ship(1000.0f, 200 * 10^3, 5.0f, 50000.0f);
+    SpaceShip ship(1000.0f, 200 * 1e3, 5.0f, 50000.0f);
     
     // Create a planet with resources
     Planet earth("Earth", 0, 6371.0f, 5.972e24f, "Terrestrial", 9.81f, {gold, water});

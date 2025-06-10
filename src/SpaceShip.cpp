@@ -19,9 +19,9 @@ void SpaceShip::setValue(float newValue) {value = newValue;}
 // Methods
 std::string SpaceShip::getInfo() const {
     std::string info = "SpaceShip Information:\n";
-    info += "Fuel: " + std::to_string(fuel) + " liters\n";
-    info += "Cargo Capacity: " + std::to_string(cargoCapacity) + " kg\n";
-    info += "Value: " + std::to_string(value) + " credits\n";
+    info += "   Fuel: " + std::to_string(fuel) + " liters\n";
+    info += "   Cargo Capacity: " + std::to_string(cargoCapacity) + " kg\n";
+    info += "   Value: " + std::to_string(value) + " USD\n";
 
     return info;
 }

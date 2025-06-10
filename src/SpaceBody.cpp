@@ -60,15 +60,12 @@ float SpaceBody::getValue() const {
 
 float SpaceBody::getValue(float cargoCapacity) {
     float totalValue = 0;
-    if (resources.empty())
-    {
+    if (resources.empty()) {
         return totalValue; // No resources, value is zero
-    }
-    else
-    {
+    } else {
         for (auto& resource : resources) {
-            float totalValue = resource.getValue() * cargoCapacity;
-            resource.setQuantity(resource.getQuantity() - cargoCapacity); // Set the quantity to the cargo capacity
+            totalValue += resource.getValue() * cargoCapacity;
+            resource.setQuantity(resource.getQuantity() - cargoCapacity);
         }
     }
     return totalValue;
@@ -77,7 +74,7 @@ float SpaceBody::getValue(float cargoCapacity) {
 float SpaceBody::getComplexity() const {
     float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
     float radiusWeight = radius / 1000; // Weight based on radius in km
-    float massWeight = mass / 1e20; // Weight based on mass in trillions of kg
+    float massWeight = mass / 1e18; // Weight based on mass in trillions of kg
     return dFEWeight + radiusWeight + massWeight; // Total complexity score
 }
 
@@ -98,6 +95,6 @@ std::string SpaceBody::getInfo() const {
         info += resource.getInfo() + "\n";
     }
     }
-    info += "Total Value: " + std::to_string(getValue()) + "\n";
+    info += "Total Value: " + std::to_string(getValue()) + " USD\n";
     return info;
 }

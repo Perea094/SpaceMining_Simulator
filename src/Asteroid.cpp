@@ -26,18 +26,18 @@ std::vector<std::string> Asteroid::extractResources() const {
 float Asteroid::getComplexity() const {
     float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
     float radiusWeight = radius / 1000; // Weight based on radius in km
-    float massWeight = mass / 1e12; // Weight based on mass in trillions of kg
+    float massWeight = mass / 1e18; // Weight based on mass in trillions of kg
     return dFEWeight + radiusWeight + massWeight; // Total complexity score
 }
 
 std::string Asteroid::getInfo() const {
     std::string info = "Asteroid Information:\n";
-    info += "Name: " + name + "\n";
-    info += "Distance from Earth: " + std::to_string(distanceFromEarth) + " km\n";
-    info += "Radius: " + std::to_string(radius) + " km\n";
-    info += "Mass: " + std::to_string(mass) + " kg\n";
-    info += "Composition: " + composition + "\n";
-    info += "Complexity: " + std::to_string(getComplexity()) + "\n";
+    info += "   Name: " + name + "\n";
+    info += "   Distance from Earth: " + std::to_string(distanceFromEarth) + " km\n";
+    info += "   Radius: " + std::to_string(radius) + " km\n";
+    info += "   Mass: " + std::to_string(mass) + " kg\n";
+    info += "   Composition: " + composition + "\n";
+    info += "   Complexity: " + std::to_string(getComplexity()) + "\n";
     
     if (resources.empty()) {
         info += "No resources available.\n";
@@ -47,6 +47,6 @@ std::string Asteroid::getInfo() const {
             info += resource.getInfo() + "\n";
         }
     }
-    info += "Total Value: " + std::to_string(getValue()) + "\n";
+    info += "Total Value: " + std::to_string(getValue()) + " USD\n";
     return info;
 }
