@@ -24,6 +24,9 @@ public:
     void setName(const std::string& name);
     void setValue(float value);
     void setQuantity(float quantity);
+
+    // Methods
+    std::string getInfo() const; // Returns a string with information about the resource
 };
 
 

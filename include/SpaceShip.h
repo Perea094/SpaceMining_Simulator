@@ -19,11 +19,9 @@ public:
     float getEfficiency() const;
 
     // Setters
-    void setFuel(float fuel);
-    void setCargoCapacity(float cargoCapacity);
-    void setEfficiency(float efficiency);
-
-    
+    void setFuel(float newFuel);
+    void setCargoCapacity(float newCargoCapacity);
+    void setEfficiency(float newEfficiency);    
 };
 
 
