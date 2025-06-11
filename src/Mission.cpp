@@ -37,6 +37,5 @@ std::string Mission::simulate() const {
     summary += "Profit from extraction: " + std::to_string(Target->getValue(Ship.getCargoCapacity())) + " USD\n";
     summary += "Overal Costs: " + std::to_string(Ship.getValue() + (Ship.getFuel() * 10) + (Duration * Target->getComplexity())) + " USD\n";
     summary += "NET Estimated Profit: " + std::to_string(profit) + " USD\n";
-    
     return summary;
 }

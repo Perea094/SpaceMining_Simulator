@@ -15,16 +15,57 @@ void printHeader() {
     std::cin.get(); // Wait for user input
 }
 
+bool acceptDecline() {
+    std::cout << "Accept or Decline?\n";
+    std::cout << "1. Accept\n";
+    std::cout << "2. Decline\n";
+    std::cout << "Please select an option (1-2): ";
+    int choice;
+    std::cin >> choice;
+    if (choice == 1) {
+        std::cout << "You accepted the mission.\n";
+        return true; // Accepted
+    } else if (choice == 2) {
+        std::cout << "You declined the mission.\n";
+        return false; // Declined
+    } else {
+        std::cout << "Invalid option. Please try again.\n";
+        return acceptDecline(); // Recursive call for valid input
+    }
+}
 
+SpaceBody* targetMenu() {
+    static std::vector<Resource> marsResources = {
+        Resource("Ice", 0.9, 4.585e18), 
+        Resource("Iron", 1.41, 1.02e20),
+        Resource("Nickel", 15.32, 8.8e21), 
+    };
+    static Planet mars("Mars", 54.6e6, 3389.5, 6.4185e23, "Terrestrial", 3.72076, marsResources);
 
-void targetMenu() {
+    static std::vector<Resource> phobosResources = {
+        Resource("Water", 1, 1.7e14), 
+        Resource("Iron", 1.41, 1.07e15),
+        Resource("Nickel", 15.32, 1.07e14),
+        Resource("Carbon Compounds", 10, 2.14e15)
+    };
+    static Moon phobos("Phobos", 77.79e6, 11.267, 1.072e16, 0.0037, phobosResources);
+
+    static std::vector<Resource> ryuguResources = {
+        Resource("Water", 1, 2.01e10), 
+        Resource("Carbon Compounds", 10, 9.42e9),
+        Resource("Iron", 1.41, 1.7e10),
+        Resource("Nickel", 15.32, 8.56e8),
+        Resource("Silicates", 0.05, 3.21e11)
+    };
+    static Asteroid ryugu("Ryugu", 56203254, 0.435, 450e9, "Carbonaceous", ryuguResources);
+    
     while (true) {
         std::cout << "Select a target type:\n";
-        std::cout << "1. Planet\n";
-        std::cout << "2. Moon\n";
-        std::cout << "3. Asteroid\n";
+        std::cout << "1. Planet Mars\n";
+        std::cout << "2. Moon Phobos\n";
+        std::cout << "3. Asteroid (162173) Ryugu\n";
         std::cout << "4. Exit\n";
-        std::cout << "Please select a target type (1-4): ";
+        std::cout << "Please select a target (1-4): ";
         
         int choice;
         std::cin >> choice;
@@ -32,14 +73,49 @@ void targetMenu() {
         if (choice == 4) {
             std::cout << "Exiting the target menu.\n";
             break;
-        } else if (choice < 1 || choice > 4) {
+        } else if (choice == 1) {
+            std::cout << "You selected Planet Mars.\n";
+            std::cout << mars.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission to Mars.\n";
+                return &mars;
+            } else {
+                std::cout << "You declined the mission to Mars.\n";
+                continue; // Go back to target selection
+            }
+        } else if (choice == 2) {
+            std::cout << "You selected Moon Phobos.\n";
+            std::cout << phobos.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission to Phobos.\n";
+                return &phobos;
+            } else {
+                std::cout << "You declined the mission to Phobos.\n";
+                continue; // Go back to target selection
+            }
+            
+        } else if (choice == 3) {
+            std::cout << "You selected Asteroid (162173) Ryugu.\n";
+            std::cout << ryugu.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission to Ryugu.\n";
+                return &ryugu;
+            } else {
+                std::cout << "You declined the mission to Ryugu.\n";
+                continue; // Go back to target selection
+            }
+        } else {
             std::cout << "Invalid option. Please try again.\n";
-            continue;
-        }  
-    }
+        }
+        }
+    return nullptr; // Return nullptr if no valid target is selected
 }
 
-void spaceShipMenu() {
+SpaceShip spaceShipMenu() {
+    SpaceShip ship1(1000.0f, 200 * 1e3, 5.0f, 50000.0f); // Example spaceship A
+    SpaceShip ship2(1500.0f, 350 * 1e3, 4.5f, 75000.0f); // Example spaceship B
+    SpaceShip customShip;
+
     while (true) {
         std::cout << "Select a spaceship type:\n";
         std::cout << "1. SpaceShip A\n";
@@ -54,15 +130,64 @@ void spaceShipMenu() {
         if (choice == 4) {
             std::cout << "Exiting the spaceship menu.\n";
             break;
-        } else if (choice < 1 || choice > 3) {
+        } else if (choice == 1) {
+            std::cout << "You selected SpaceShip A.\n";
+            std::cout << ship1.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission with SpaceShip A.\n";
+                return ship1;
+            } else {
+                std::cout << "You declined the mission with SpaceShip A.\n";
+                continue; // Go back to spaceship selection
+            }
+            
+        } else if (choice == 2) {
+            std::cout << "You selected SpaceShip B.\n";
+            std::cout << ship2.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission with SpaceShip B.\n";
+                return ship2;
+            } else {
+                std::cout << "You declined the mission with SpaceShip B.\n";
+                continue; // Go back to spaceship selection
+            }
+            
+        } else if (choice == 3) {
+            std::cout << "You selected Custom Ship. Please enter the details:\n";
+            float fuel, cargoCapacity, efficiency, value;
+            std::cout << "Enter fuel (in liters): ";
+            std::cin >> fuel;
+            std::cout << "Enter cargo capacity (in kg): ";
+            std::cin >> cargoCapacity;
+            std::cout << "Enter efficiency in (l/kg): ";
+            std::cin >> efficiency;
+            std::cout << "Enter value (in USD): ";
+            std::cin >> value;
+            customShip = SpaceShip(fuel, cargoCapacity, efficiency, value);
+            std::cout << customShip.getInfo() << "\n";
+            if (acceptDecline() == 1) {
+                std::cout << "You accepted the mission with Custom Ship.\n";
+                return customShip;
+            } else {
+                std::cout << "You declined the mission with Custom Ship.\n";
+                continue; // Go back to spaceship selection
+            }
+            
+        } else {
             std::cout << "Invalid option. Please try again.\n";
-            continue;
         }  
     }
+    return ship1;
 }
 
 void missionMenu() {
     std::cout << "Starting a new mission...\n";
+    Mission mission;
+    SpaceBody* target = nullptr;
+    SpaceShip ship;
+    mission.setShip(ship);
+
+
     while (true)
     {
         std::cout << "Select an option:\n";
@@ -77,15 +202,21 @@ void missionMenu() {
             std::cout << "Exiting the mission setup.\n";
             break;
         } else if (missionOption == 1) {
-            targetMenu();
+            SpaceBody* selectedTarget = targetMenu();
+            if (selectedTarget != nullptr) {
+                mission.setTarget(*selectedTarget);
+            }
         } else if (missionOption == 2) {
-            spaceShipMenu();
+            mission.setShip(spaceShipMenu());
         } else if (missionOption == 3) {
-            std::cout << "Set Mission Duration (in days):\n";
-            // Here you would normally set the duration
+            std::cout << "Set Mission Duration (in days / 30 days recomended for test case):\n";
+            float duration;
+            std::cin >> duration;
+            mission.setDuration(duration);
         } else if (missionOption == 4) {
             std::cout << "Simulating Mission...\n";
-            // Here you would normally simulate the mission
+            std::cout << mission.simulate();
+            std::cout << "Mission simulation completed.\n";
         }
         else {
             std::cout << "Invalid option. Please try again.\n";
