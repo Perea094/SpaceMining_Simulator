@@ -64,3 +64,5 @@ This is the UML diagram I designed for the project. It includes the following ke
 - Basic knowledge of C++ and object-oriented programming.  
 ### Steps to Run  
 1. Clone the repository or download it
+2. Run the following line in the terminal: `g++ src/*.cpp main.cpp -o SpaceMining_Simulator`
+3. Execute in the terminal: `.\SpaceMining_Simulator`
