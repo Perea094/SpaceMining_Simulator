@@ -3,7 +3,25 @@
 #include <iostream>
 #include <vector>
 
+
+void printHeader() {
+    std::cout << "==================== Space Exploration Mission ====================\n";
+    std::cout << "This program simulates a space mission targeting a space body with resources.\n";
+    std::cout << "===================================================================\n\n";
+}
+
 int main() {
+
+    
+
+    printHeader();
+    while (true) {
+        std::cout << "Welcome to the Space Exploration Mission Simulator!\n";
+        std::cout << "Press Enter to continue...\n";
+        std::cin.get(); // Wait for user input
+        break; // Exit the loop after one iteration for demonstration purposes
+    }
+ 
     // Create resources
     Resource gold("Gold", 60.73 * 1000, 57000 * 1e3);
     Resource water("Water", 1.0f, 1386 * 1e15);
