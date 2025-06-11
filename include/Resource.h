@@ -21,9 +21,9 @@ public:
     float getQuantity() const;
 
     // Setters
-    void setName(const std::string& newName);
-    void setValue(float newValue);
-    void setQuantity(float newQuantity);
+    void setName(const std::string& newName); 
+    void setValue(float newValue); 
+    void setQuantity(float newQuantity); 
 
     // Methods
     std::string getInfo() const; // Returns a string with information about the resource

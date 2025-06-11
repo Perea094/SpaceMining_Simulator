@@ -22,12 +22,6 @@ public:
     float getEfficiency() const;
     float getValue() const;
 
-    // Setters
-    void setFuel(float newFuel);
-    void setCargoCapacity(float newCargoCapacity);
-    void setEfficiency(float newEfficiency);    
-    void setValue(float newValue);
-
     // Methods
     std::string getInfo() const; // Returns a string with information about the spaceship
     

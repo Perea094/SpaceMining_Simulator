@@ -13,8 +13,8 @@ float Resource::getQuantity() const {return quantity;}
 
 // Setters
 void Resource::setName(const std::string& newName) {name = newName;}
-void Resource::setValue(float newValue) {value = newValue;}
-void Resource::setQuantity(float newQuantity) {quantity = newQuantity;}
+void Resource::setValue(float newValue) {value = newValue;} 
+void Resource::setQuantity(float newQuantity) {quantity = newQuantity;} 
 
 // Methods
 std::string Resource::getInfo() const {

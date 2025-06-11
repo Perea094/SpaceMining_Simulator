@@ -10,9 +10,6 @@ Asteroid::Asteroid(const std::string& name, float distanceFromEarth, float radiu
 // Getters
 std::string Asteroid::getComposition() const {return composition;}
 
-// Setters
-void Asteroid::setComposition(const std::string& comp) {composition = comp;}
-
 // Methods
 std::vector<std::string> Asteroid::extractResources() const {
     std::vector<std::string> extractedResources;

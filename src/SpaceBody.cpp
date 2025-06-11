@@ -17,24 +17,7 @@ float SpaceBody::getRadius() const {return radius;}
 float SpaceBody::getMass() const {return mass;}
 std::vector<Resource> SpaceBody::getResources() const {return resources;}
 
-
-// Setters
-void SpaceBody::setName(const std::string& newName) {name = newName;}
-void SpaceBody::setDistanceFromEarth(float newDistance) {distanceFromEarth = newDistance;}
-void SpaceBody::setRadius(float newRadius) {radius = newRadius;}
-void SpaceBody::setMass(float newMass) {mass = newMass;}
-void SpaceBody::setResources(const std::vector<Resource>& newResources) {resources = newResources;}
-
 // Methods
-void SpaceBody::operator+ (const Resource& resource) {
-    resources.push_back(resource);
-}
-void SpaceBody::operator- (const Resource& resource) {
-    auto it = std::remove_if(resources.begin(), resources.end(),
-                             [&resource](const Resource& res) { return res.getName() == resource.getName(); });
-    resources.erase(it, resources.end());
-}
-
 std::vector<std::string> SpaceBody::extractResources() const {
     std::vector<std::string> extractedResources;
     for (const auto& resource : resources) {

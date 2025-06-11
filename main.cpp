@@ -256,6 +256,7 @@ int main() {
 
 
 /*
+// Basic Test case
 // Create resources
     Resource gold("Gold", 60.73 * 1000, 57000 * 1e3);
     Resource water("Water", 1.0f, 1386 * 1e15);

@@ -27,16 +27,7 @@ public:
     float getMass() const;
     std::vector<Resource> getResources() const;
 
-    // Setters
-    void setName(const std::string& newName);
-    void setDistanceFromEarth(float newDistance);
-    void setRadius(float newRadius);
-    void setMass(float newMass);
-    void setResources(const std::vector<Resource>& newResources);
-
     // Methods
-    void operator+ (const Resource& resource); // Adds a resource to the space body
-    void operator- (const Resource& resource); // Removes a resource from the space body
     virtual std::vector<std::string> extractResources() const = 0; //
     float getValue() const; // Returns the value of the space body
     float getValue(float cargoCapacity);

@@ -18,9 +18,6 @@ class Asteroid : public SpaceBody
         // Getters
         std::string getComposition() const;
 
-        // Setters
-        void setComposition(const std::string& comp);
-
         // Methods
         std::vector<std::string> extractResources() const override; // Extracts resources from the asteroid
         float getComplexity() const override; // Returns the complexity of the asteroid based on its properties

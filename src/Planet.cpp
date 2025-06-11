@@ -11,10 +11,6 @@ Planet::Planet(const std::string& name, float distanceFromEarth, float radius, f
 std::string Planet::getPlanetType() const { return planetType; }
 float Planet::getGravity() const { return gravity; }
 
-// Setters
-void Planet::setPlanetType(const std::string& type) { planetType = type; }
-void Planet::setGravity(float g) { gravity = g; }
-
 // Methods
 std::vector<std::string> Planet::extractResources() const {
     std::vector<std::string> extractedResources;

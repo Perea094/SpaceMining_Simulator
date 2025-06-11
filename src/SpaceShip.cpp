@@ -10,12 +10,6 @@ float SpaceShip::getCargoCapacity() const {return cargoCapacity;}
 float SpaceShip::getEfficiency() const {return efficiency;}
 float SpaceShip::getValue() const {return value;}
 
-// Setters
-void SpaceShip::setFuel(float newFuel) {fuel = newFuel;}
-void SpaceShip::setCargoCapacity(float newCargoCapacity) {cargoCapacity = newCargoCapacity;}
-void SpaceShip::setEfficiency(float newEfficiency) {efficiency = newEfficiency;}
-void SpaceShip::setValue(float newValue) {value = newValue;}
-
 // Methods
 std::string SpaceShip::getInfo() const {
     std::string info = "SpaceShip Information:\n";

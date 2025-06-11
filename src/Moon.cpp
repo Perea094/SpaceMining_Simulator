@@ -10,9 +10,6 @@ Moon::Moon(const std::string& name, float distanceFromEarth, float radius, float
 // Getters
 float Moon::getGravity() const { return gravity; }
 
-// Setters
-void Moon::setGravity(float g) { gravity = g; }
-
 // Methods
 std::vector<std::string> Moon::extractResources() const {
     std::vector<std::string> extractedResources;

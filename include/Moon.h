@@ -17,9 +17,6 @@ class Moon : public SpaceBody
         // Getters
         float getGravity() const;
 
-        // Setters
-        void setGravity(float g);
-
         // Methods 
         std::vector<std::string> extractResources() const override; // Extracts resources from the moon
         float getComplexity() const override; // Returns the complexity of the moon based on its properties

@@ -22,10 +22,6 @@ public:
     std::string getPlanetType() const;
     float getGravity() const;
 
-    // Setters
-    void setPlanetType(const std::string& type);
-    void setGravity(float g);
-
     // Methods
     std::vector<std::string> extractResources() const override; // Extracts resources from the planet
     float getComplexity() const override; // Returns the complexity of the planet based on its properties
