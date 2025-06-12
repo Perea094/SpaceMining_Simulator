@@ -29,7 +29,8 @@ This space mining simulator serves as a vital tool, bridging the present with th
 
 ---
 ## Class Diagram  
-![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/ceb914f8-07b8-4a38-9de0-040fcfbd0135)
+![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/308f26c1-d096-4968-bf55-08c1054e92ba)
+
 
 
 This is the UML diagram I designed for the project. It includes the following key elements:  
@@ -63,3 +64,5 @@ This is the UML diagram I designed for the project. It includes the following ke
 - Basic knowledge of C++ and object-oriented programming.  
 ### Steps to Run  
 1. Clone the repository or download it
+2. Run the following line in the terminal: `g++ src/*.cpp main.cpp -o SpaceMining_Simulator`
+3. Execute in the terminal: `.\SpaceMining_Simulator`
