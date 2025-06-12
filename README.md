@@ -29,7 +29,9 @@ This space mining simulator serves as a vital tool, bridging the present with th
 
 ---
 ## Class Diagram  
-![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/308f26c1-d096-4968-bf55-08c1054e92ba)
+![MiningSimulatorClassDiagram drawio](https://github.com/user-attachments/assets/c0944684-562c-4649-912b-af169ad01b4b)
+
+
 
 
 
@@ -52,9 +54,9 @@ This is the UML diagram I designed for the project. It includes the following ke
 
 ---
 ## Future enhancements
-- 1
-- 2
-- 3
+- Better UI
+- Include visualization of planets and an interestellar map
+- Error fixing
 
 ---
 ## Setup and Requirements  
