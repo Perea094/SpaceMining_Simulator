@@ -81,3 +81,7 @@ std::string SpaceBody::getInfo() const {
     info += "Total Value: " + std::to_string(getValue()) + " USD\n";
     return info;
 }
+
+void SpaceBody::operator+ (const Resource& resource) {
+    resources.push_back(resource);
+}
