@@ -54,9 +54,9 @@ This is the UML diagram I designed for the project. It includes the following ke
 
 ---
 ## Future enhancements
-- 1
-- 2
-- 3
+- Better UI
+- Include visualization of planets and an interestellar map
+- Error fixing
 
 ---
 ## Setup and Requirements  
