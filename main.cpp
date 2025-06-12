@@ -37,28 +37,28 @@ bool acceptDecline() {
 SpaceBody* targetMenu() {
     static std::vector<Resource> marsResources = {
         Resource("Ice", 0.9, 4.585e18), 
-        Resource("Iron", 1.41, 1.02e20),
-        Resource("Nickel", 15.32, 8.8e21), 
+        Resource("Iron", 1.41, 1.02e20) 
     };
     static Planet mars("Mars", 54.6e6, 3389.5, 6.4185e23, "Terrestrial", 3.72076, marsResources);
+    mars + Resource("Nickel", 15.32, 8.8e21); // Adding Nickel resource to Mars
 
     static std::vector<Resource> phobosResources = {
         Resource("Water", 1, 1.7e14), 
         Resource("Iron", 1.41, 1.07e15),
-        Resource("Nickel", 15.32, 1.07e14),
-        Resource("Carbon Compounds", 10, 2.14e15)
+        Resource("Nickel", 15.32, 1.07e14)
     };
     static Moon phobos("Phobos", 77.79e6, 11.267, 1.072e16, 0.0037, phobosResources);
+    phobos + Resource("Carbon Compounds", 10, 2.14e15);
 
     static std::vector<Resource> ryuguResources = {
         Resource("Water", 1, 2.01e10), 
         Resource("Carbon Compounds", 10, 9.42e9),
         Resource("Iron", 1.41, 1.7e10),
-        Resource("Nickel", 15.32, 8.56e8),
-        Resource("Silicates", 0.05, 3.21e11)
+        Resource("Nickel", 15.32, 8.56e8)
     };
     static Asteroid ryugu("Ryugu", 56203254, 0.435, 450e9, "Carbonaceous", ryuguResources);
-    
+    ryugu + Resource("Silicates", 0.05, 3.21e11);
+
     while (true) {
         std::cout << "Select a target type:\n";
         std::cout << "1. Planet Mars\n";
