@@ -29,7 +29,6 @@ public:
 
     // Methods
     void operator+ (const Resource& resource); // Adds a resource to the space body
-    virtual std::vector<std::string> extractResources() const = 0; //
     float getValue() const; // Returns the value of the space body
     float getValue(float cargoCapacity);
     virtual float getComplexity() const = 0;

@@ -11,14 +11,6 @@ Moon::Moon(const std::string& name, float distanceFromEarth, float radius, float
 float Moon::getGravity() const { return gravity; }
 
 // Methods
-std::vector<std::string> Moon::extractResources() const {
-    std::vector<std::string> extractedResources;
-    for (const auto& resource : resources) {
-        extractedResources.push_back(resource.getName());
-    }
-    return extractedResources;
-}
-
 float Moon::getComplexity() const {
     float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
     float radiusWeight = radius / 1000; // Weight based on radius in km

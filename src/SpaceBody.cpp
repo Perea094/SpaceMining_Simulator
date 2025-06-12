@@ -18,14 +18,6 @@ float SpaceBody::getMass() const {return mass;}
 std::vector<Resource> SpaceBody::getResources() const {return resources;}
 
 // Methods
-std::vector<std::string> SpaceBody::extractResources() const {
-    std::vector<std::string> extractedResources;
-    for (const auto& resource : resources) {
-        extractedResources.push_back(resource.getName());
-    }
-    return extractedResources;
-}
-
 float SpaceBody::getValue() const {
     float totalValue = 0;
     if (resources.empty())

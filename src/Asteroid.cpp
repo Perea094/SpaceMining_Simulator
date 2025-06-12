@@ -11,15 +11,6 @@ Asteroid::Asteroid(const std::string& name, float distanceFromEarth, float radiu
 std::string Asteroid::getComposition() const {return composition;}
 
 // Methods
-std::vector<std::string> Asteroid::extractResources() const {
-    std::vector<std::string> extractedResources;
-    for (const auto& resource : resources) {
-        extractedResources.push_back(resource.getName());
-    }
-    return extractedResources;
-}
-
-
 float Asteroid::getComplexity() const {
     float dFEWeight = distanceFromEarth / 100000; // Weight based on distance from Earth in 100,000 km
     float radiusWeight = radius / 1000; // Weight based on radius in km

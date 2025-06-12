@@ -16,7 +16,7 @@ class Mission
 
         SpaceBody* Target; // The target space body for the mission
         SpaceShip Ship; // The spaceship used for the mission
-        float Duration; // Duration of the mission in days
+        float duration; // Duration of the mission in days
 
     public:
         // Constructors
@@ -31,7 +31,7 @@ class Mission
         // Setters
         void setTarget(const SpaceBody& target);
         void setShip(const SpaceShip& ship);
-        void setDuration(float duration);
+        void setDuration(float newDuration);
 
         // Methods
         std::string simulate() const; // Simulate the mission and return a summary

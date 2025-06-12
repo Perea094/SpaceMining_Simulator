@@ -19,7 +19,6 @@ class Asteroid : public SpaceBody
         std::string getComposition() const;
 
         // Methods
-        std::vector<std::string> extractResources() const override; // Extracts resources from the asteroid
         float getComplexity() const override; // Returns the complexity of the asteroid based on its properties
         std::string getInfo() const override; // Returns a string with information about the asteroid
 
