@@ -1,5 +1,6 @@
 #include "../include/Resource.h"
 #include <string>
+#include <iomanip>
 
 // Constructors
 Resource::Resource() : name(""), value(0), quantity(0) {}

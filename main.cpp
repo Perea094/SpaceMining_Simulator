@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <iomanip> // Include iomanip for setprecision
 
 
 
@@ -226,6 +227,7 @@ void missionMenu() {
 }
 
 int main() {
+    std::cout << std::fixed << std::setprecision(2); // Set fixed-point notation and precision
 
     
     int option;

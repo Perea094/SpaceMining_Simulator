@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 
 SpaceBody::SpaceBody()
     : name(""), distanceFromEarth(0), radius(0), mass(0), resources() {}

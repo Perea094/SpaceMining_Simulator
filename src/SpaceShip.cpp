@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "../include/SpaceShip.h"
 
 SpaceShip::SpaceShip() : fuel(0), cargoCapacity(0), efficiency(0), value(0) {}
